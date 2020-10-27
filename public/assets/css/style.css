@@ -1,10 +1,17 @@
 * {
     box-sizing: border-box;
-    background-color: slategray ;
 }
 
 *:before, *:after {
     box-sizing: border-box;
+}
+
+body {
+    background-color: slategray;
+}
+
+.container {
+    align-items: center;
 }
 
 #home-header {
@@ -15,7 +22,6 @@
 }
 
 #login-form {
-    display: center;
     text-align: center;
     padding: 30px 30px 30px 30px;
     box-shadow: 5px 5px 5px 5px darkslategray;
