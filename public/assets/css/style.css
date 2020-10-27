@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    background-color: slategray ;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+#home-header {
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    color: black;
+
+}
+
+#login-form {
+    display: center;
+    text-align: center;
+    padding: 30px 30px 30px 30px;
+    box-shadow: 5px 5px 5px 5px darkslategray;
+}
+
+.collection-container {
+    width: 1024px;
+    margin: 40px auto;
+}
+
+#cover, #general-info, #more-info {
+    width: 500px;
+    padding: 30px;
+}
+
+#cover, #general-info {
+    float: left;
+}
+#more-info {
+    float: right;
+}
