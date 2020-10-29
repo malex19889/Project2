@@ -10,7 +10,7 @@ add footer
     <div class="collection-container">
         {{#each coverArt}}
         <section id="cover">
-            <img src="{{this.coverArt}}" alt="Album Art" class="coverArt">
+            <img src="{{this.albumArt}}" alt="Album Art" class="albumArt">
         </section>
         {{/each}}
 
@@ -19,9 +19,9 @@ add footer
                 {{#each info}}
                 <li>
                     <p><span class="label">Artist:</span> {{this.artist}}</p>
-                    <p><span class="label">Album:</span> {{this.album}}</p>
+                    <p><span class="label">Album:</span> {{this.albumName}}</p>
                     <p><span class="label">Genre:</span> {{this.genre}}</p>
-                    <p><span class="label">Year:</span> {{this.year}}</p>
+                    <p><span class="label">Year:</span> {{this.releaseYear}}</p>
                     <p><span class="label">Tracks:</span> {{this.tracks}}</p>
 
                     <button data-id="{{this.id}}" class="delalbum">Delete</button>
@@ -36,8 +36,11 @@ add footer
             <ul>
                 {{#each moreInfo}}
                 <li>
+                    {{!-- change to dropdown menu --}}
                     <p><span class="label">Media Type:</span> {{this.media}}</p>
                     <p><span class="label">Condition:</span> {{this.condition}}</p>
+                    {{!-- change to a check box or icon --}}
+                    <p><span class="label">Favorite:</span> {{this.favorite}}</p>
                     <p><span class="label">Notes:</span> {{this.notes}}</p>
 
                     <button data-id="{{this.id}}" class="delalbum">Delete</button>

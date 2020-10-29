@@ -1,30 +1,24 @@
 * {
     box-sizing: border-box;
-}
-
-*:before, *:after {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: slategray;
-}
-
-.container {
-    align-items: center;
+    color: black;
+    font-weight: bolder;
 }
 
 #home-header {
     text-align: center;
     padding: 10px 0px 10px 0px;
-    color: black;
-
 }
 
 #login-form {
+    text-align: left;
+    padding: 30px 30px 15px 30px;
+    box-shadow: 5px 5px 5px 5px black;
+}
+
+
+#createAccount {
+    padding-top: 20px;
     text-align: center;
-    padding: 30px 30px 30px 30px;
-    box-shadow: 5px 5px 5px 5px darkslategray;
 }
 
 .collection-container {
