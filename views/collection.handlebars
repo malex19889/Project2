@@ -8,16 +8,42 @@ add footer
 --}}
 <div class="container">
     <div class="collection-container">
+        {{#each coverArt}}
         <section id="cover">
-            {{!-- album image goes here --}}
+            <img src="{{this.coverArt}}" alt="Album Art" class="coverArt">
+        </section>
+        {{/each}}
+
+        <section id="generalInfo">
+            <ul>
+                {{#each info}}
+                <li>
+                    <p><span class="label">Artist:</span> {{this.artist}}</p>
+                    <p><span class="label">Album:</span> {{this.album}}</p>
+                    <p><span class="label">Genre:</span> {{this.genre}}</p>
+                    <p><span class="label">Year:</span> {{this.year}}</p>
+                    <p><span class="label">Tracks:</span> {{this.tracks}}</p>
+
+                    <button data-id="{{this.id}}" class="delalbum">Delete</button>
+
+                </li>
+                {{/each}}
+            </ul>
         </section>
 
-        <section id="general-info">
-            {{!-- album name, artist, and release date goes here --}}
-        </section>
-
-        <section id="more-info">
+        <section id="moreInfo">
             {{!-- condition, price and additional notes go here --}}
+            <ul>
+                {{#each moreInfo}}
+                <li>
+                    <p><span class="label">Condition:</span> {{this.condition}}</p>
+                    <p><span class="label">Notes:</span> {{this.notes}}</p>
+
+                    <button data-id="{{this.id}}" class="delalbum">Delete</button>
+
+                </li>
+                {{/each}}
+            </ul>
         </section>
     </div>
 </div>
