@@ -9,9 +9,9 @@ $("#add-btn").on("click", function(event) {
   };
 
   $.post("/api/new", newRecord)
-  // On success, run the following code
+    // On success, run the following code
     .then(function(data) {
-      // Log the data we found
+    // Log the data we found
       console.log(data);
     });
 
