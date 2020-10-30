@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
   });
   // setup user association to their albums
   User.associate = function (models) {
-    User.hasMany(models.Record, {
+    User.hasMany(models.Album, {
       onDelete: "cascade"
     });
   };
