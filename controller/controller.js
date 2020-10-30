@@ -7,7 +7,10 @@ const router = express.Router();
 router.get("/", function (req, res) {
   res.render("index");
 });
-//
+router.get("/collection", function (req, res) {
+  res.render("collection");
+});
+// listener for new burger
 router.post("/api/", function (req, res) {
   res.send("");
 });
