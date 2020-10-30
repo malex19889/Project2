@@ -7,11 +7,11 @@ const router = express.Router();
 router.get("/", function (req, res) {
   res.render("index");
 });
-// listener for new burger
+//
 router.post("/api/", function (req, res) {
   res.send("");
 });
-//  listener for burger status update
+//  listener for
 router.put("/api//:id", function (req, res) {
   res.send("");
 });
