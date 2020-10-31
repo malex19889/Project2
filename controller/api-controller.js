@@ -21,7 +21,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        res.redirect(307, "/login");
+        res.redirect(307, "/");
       })
       .catch(function(err) {
         res.status(401).json(err);
@@ -54,7 +54,7 @@ module.exports = function(app) {
   app.get("/api/user_data", isAuthenticated, function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.render("/login");
+      res.render("/");
     } else {
       // Otherwise send back the user's email and id
       res.json({
