@@ -48,14 +48,14 @@ module.exports = function(app) {
     res.redirect("/index");
   });
   // Route to api call for audiodb
+  // eslint-disable-next-line no-unused-vars
   app.get("/api/music_data/:artist", function(req, res) {
     let artist = req.params.artist;
     const apiKey = process.env.API_KEY;
 
     axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
       .then((response) => {
-        data = response;
-        getdata(data);
+        getdata(response);
         // res.send(response.data.album);
 
       })
