@@ -56,8 +56,6 @@ module.exports = function(app) {
       .then((response) => {
         data = response;
         getdata(data);
-
-        // console.log(response.data.album);
         // res.send(response.data.album);
 
       })
