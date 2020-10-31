@@ -35,7 +35,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        res.redirect(307, "/login");
+        res.redirect(307, "/");
       })
       .catch(function(err) {
         res.status(401).json(err);
@@ -45,7 +45,7 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/index");
+    res.redirect("/");
   });
   // Route to api call for audiodb
   // eslint-disable-next-line no-unused-vars
@@ -68,7 +68,7 @@ module.exports = function(app) {
   app.get("/api/user_data", isAuthenticated, function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.render("/login");
+      res.render("/");
     } else {
       // Otherwise send back the user's email and id
       res.json({
