@@ -4,6 +4,18 @@ var passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const axios = require("axios").default;
 
+
+//this function will get the response and filter it so we can access our data
+function getdata(response){
+
+  let albums = [];
+  let albumsData = response.data.album;
+  for (let i = 0; i < albumsData.length; i ++){
+    albums.push({Artist: albumsData[i].strArtist, Album: albumsData[i].strAlbum, Genre: albumsData[i].strGenre, Thumb: albumsData[i].strAlbumThumb, Year: albumsData[i].intYearReleased});
+    console.log(albums[i]);
+  }
+}
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -42,7 +54,9 @@ module.exports = function(app) {
     axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
       .then((response) => {
         data = response;
-        console.log(response.data.album);
+        getdata(data);
+        // res.send(response.data.album);
+
       })
       .catch((error) => {
         console.log(error);
@@ -64,3 +78,6 @@ module.exports = function(app) {
     }
   });
 };
+
+
+
