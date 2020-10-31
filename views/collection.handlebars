@@ -20,7 +20,7 @@ add footer
         </div>
     </div>
     <div class="collection-container">
-        {{#each coverArt}}
+        {{#each albumArt}}
         <section id="cover">
             <img src="{{this.albumArt}}" alt="Album Art" class="albumArt">
         </section>
@@ -30,7 +30,7 @@ add footer
             <ul>
                 {{#each info}}
                 <li>
-                    
+
                     <p><span class="label">Artist:</span> {{this.artist}}</p>
                     <p><span class="label">Album:</span> {{this.albumName}}</p>
                     <p><span class="label">Genre:</span> {{this.genre}}</p>
