@@ -4,7 +4,6 @@ var passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const axios = require("axios").default;
 
-<<<<<<< HEAD
 
 //this function will get the response and filter it so we can access our data
 function getdata(response){
@@ -17,9 +16,6 @@ function getdata(response){
   }
 }
 
-
-=======
->>>>>>> main
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -58,13 +54,9 @@ module.exports = function(app) {
     axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
       .then((response) => {
         data = response;
-<<<<<<< HEAD
         getdata(data);
         // res.send(response.data.album);
 
-=======
-        console.log(response.data.album);
->>>>>>> main
       })
       .catch((error) => {
         console.log(error);
@@ -86,9 +78,6 @@ module.exports = function(app) {
     }
   });
 };
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> main
