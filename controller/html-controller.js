@@ -1,4 +1,10 @@
+let artist = {
+  artist: "DMX",
+  album: "Hotter than Hell",
+  tracks: 12
+};
 
+let theData = JSON.stringify(artist);
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -27,7 +33,7 @@ module.exports = function(app) {
 
   // If a user who is not logged in tries to access this route they will be redirected to the login page
   app.get("/members", isAuthenticated, function(req, res) {
-    res.render("collection");
+    res.render("collection", theData);
   });
 
 };
