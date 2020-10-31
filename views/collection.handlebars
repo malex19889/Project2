@@ -5,14 +5,38 @@ add collection x
 add dropdown for sorting collection x
 organize grid for album art, album info, and extra info
 add footer
+datatables.js - set up collection specific search
 --}}
 <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand">AudioFiler</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/members">My Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search by Artist" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+        </div>
+    </nav>
+
     <div class="row">
         <div class="col-lg-12" id="home-header">
-            <h1 class="home">Record Collector</h1>
+            <h1 class="home">My Collection</h1>
+            {{!-- this will search for keywords in your collection --}}
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-dark" type="button" id="button-addon1">Search by Artist</button>
+                    <button class="btn btn-outline-dark" type="button" id="button-addon1">Search</button>
                 </div>
                 <input type="text" class="form-control" placeholder="" aria-label="Search submit"
                     aria-describedby="button-addon1">

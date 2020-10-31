@@ -45,7 +45,7 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/index");
+    res.redirect("/");
   });
   // Route to api call for audiodb
   // eslint-disable-next-line no-unused-vars
