@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Album = sequelize.define("Album", {
         albumName: {
             type: DataTypes.STRING,
@@ -61,5 +61,12 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: false
         },
     });
+    Album.associate = (models) => {
+        Album.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Album;
 };
