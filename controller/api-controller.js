@@ -53,8 +53,7 @@ module.exports = function(app) {
 
     axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
       .then((response) => {
-        data = response;
-        getdata(data);
+        getdata(response);
         // res.send(response.data.album);
 
       })
