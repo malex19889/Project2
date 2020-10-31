@@ -24,9 +24,11 @@
 
 </div>
 <script>
-    $("#usersub").on("click", ()=> {
-        
+    $("#usersub").on("click", (event)=> {
+        event.preventDefault();
         let newuser = {
+            firstName: "alex",
+            lastName: "will",
             email: $("#email").val().trim(),
             password: $("#password").val().trim()
         }
@@ -35,7 +37,7 @@
           url: "/api/register",
           data: newuser  
         }).then((data)=>{
-            alert("posted new user")
+            window.location.replace("/login")
         })
         
     })
