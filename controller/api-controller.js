@@ -29,6 +29,8 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/register", function(req, res) {
     db.User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password
     })
@@ -46,22 +48,20 @@ module.exports = function(app) {
     res.redirect("/index");
   });
   // Route to api call for audiodb
+  // eslint-disable-next-line no-unused-vars
   app.get("/api/music_data/:artist", function(req, res) {
     let artist = req.params.artist;
     const apiKey = process.env.API_KEY;
-    let data = null;
 
     axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
       .then((response) => {
-        data = response;
-        getdata(data);
+        getdata(response);
         // res.send(response.data.album);
 
       })
       .catch((error) => {
         console.log(error);
       });
-    res.json(data);
   });
 
   // Route for getting some data about our user to be used client side
