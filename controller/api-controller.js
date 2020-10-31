@@ -2,6 +2,7 @@
 var db = require("../models");
 var passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const axios = require("axios").default;
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -31,6 +32,22 @@ module.exports = function(app) {
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/index");
+  });
+  // Route to api call for audiodb
+  app.get("/api/music_data/:artist", function(req, res) {
+    let artist = req.params.artist;
+    const apiKey = process.env.API_KEY;
+    let data = null;
+
+    axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
+      .then((response) => {
+        data = response;
+        console.log(response.data.album);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    res.json(data);
   });
 
   // Route for getting some data about our user to be used client side
