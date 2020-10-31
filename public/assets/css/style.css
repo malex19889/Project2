@@ -4,8 +4,7 @@
     font-weight: bolder;
 }
 
-#home-header,
-.register-header {
+h1 {
     text-align: center;
     padding: 10px 0px 10px 0px;
 }
@@ -29,6 +28,11 @@
 .collection-container {
     width: 1024px;
     margin: 40px auto;
+}
+
+#collectionsearch {
+    width: 50%;
+    margin: 0 auto;
 }
 
 #cover, #general-info, #more-info {
