@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="register-header">Register</h1>
+            <h1 class="home">Register</h1>
         </div>
     </div>
     <div class="row">
@@ -31,20 +31,21 @@
 
 </div>
 <script>
-    $("#usersub").on("click", () => {
-
+    $("#usersub").on("click", (event)=> {
+        event.preventDefault();
         let newuser = {
-            username: $("#username").val().trim(),
+            firstName: "alex",
+            lastName: "will",
             email: $("#email").val().trim(),
             password: $("#password").val().trim()
         }
         $.ajax({
-            type: "POST",
-            url: "/api/register",
-            data: newuser
-        }).then((data) => {
-            alert("posted new user")
+          type: "POST",
+          url: "/api/register",
+          data: newuser  
+        }).then((data)=>{
+            window.location.replace("/login")
         })
-
+        
     })
 </script>
