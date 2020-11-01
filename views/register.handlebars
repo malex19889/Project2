@@ -7,25 +7,25 @@
     </div>
     <div class="row">
         <div class="col-lg-4"></div>
-        <form class="col-lg-4" id="login-form">
+        <form class="col-lg-4" id="login-form" method="POST" action="/api/register">
             <div class="form-group">
                 <label for="firstName">First Name:</label>
-                <input type="firstName" class="form-control" id="firstName" aria-describedby="firstHelp">
+                <input type="firstName" class="form-control" name="firstName" id="firstName" aria-describedby="firstHelp">
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name:</label>
-                <input type="lasName" class="form-control" id="lastName" aria-describedby="lastHelp">
+                <input type="lasName" class="form-control" name="lastName" id="lastName" aria-describedby="lastHelp">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your information with
                     anyone
                     else.</small>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" class="form-control" name="password" id="password">
             </div>
             <button type="submit" class="btn btn-dark" id="usersub">Submit</button>
             <p id="loginlink"><a href="/">Login here.</a></p>
@@ -35,7 +35,9 @@
 
 </div>
 <script>
-    $("#usersub").on("click", (event) => {
+
+//no longer needed, used post method and names within form
+   /* $("#usersub").on("click", (event) => {
         event.preventDefault();
         let newuser = {
             firstName: "alex",
@@ -51,5 +53,5 @@
             window.location.replace("/login")
         })
 
-    })
+    }) */
 </script>
