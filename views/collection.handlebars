@@ -22,8 +22,8 @@ datatables.js - set up collection specific search
                 </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search by Artist" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" method="GET" action="/members">
+                <input class="form-control mr-sm-2" name="search" placeholder="Search by Artist" aria-label="Search">
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
 
@@ -43,45 +43,16 @@ datatables.js - set up collection specific search
             </div>
         </div>
     </div>
+
     <div class="collection-container">
-        {{#each albumArt}}
+        {{#each albums}}
         <section id="cover">
-            <img src="{{this.albumArt}}" alt="Album Art" class="albumArt">
+            <img src="{{albumArt}}" alt="Album Art" class="albumArt">
+            <h3>{{artist}}: {{albumName}}</h3>
+            <p>{{releaseYear}}</p>
+            <p>{{genre}}</p>
         </section>
         {{/each}}
-
-        <section id="generalInfo">
-            <ul>
-                {{#each info}}
-                <li>
-
-                    <p><span class="label">Artist:</span> {{this.artist}}</p>
-                    <p><span class="label">Album:</span> {{this.albumName}}</p>
-                    <p><span class="label">Genre:</span> {{this.genre}}</p>
-                    <p><span class="label">Year:</span> {{this.releaseYear}}</p>
-
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-
-        <section id="moreInfo">
-            {{!-- condition, price and additional notes go here --}}
-            <ul>
-                {{#each moreInfo}}
-                <li>
-                    {{!-- change to dropdown menu --}}
-                    <p><span class="label">Media Type:</span> {{this.media}}</p>
-                    <p><span class="label">Condition:</span> {{this.condition}}</p>
-                    {{!-- change to a check box or icon --}}
-                    <p><span class="label">Favorite:</span> {{this.favorite}}</p>
-                    <p><span class="label">Notes:</span> {{this.notes}}</p>
-
-                    <button data-id="{{this.id}}" class="delalbum">Delete</button>
-
-                </li>
-                {{/each}}
-            </ul>
-        </section>
     </div>
+    
 </div>
