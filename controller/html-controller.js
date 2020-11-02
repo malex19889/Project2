@@ -48,22 +48,29 @@ module.exports = function (app) {
       res.sendStatus(500);
     }
   });
-  // route to add an album
-  app.get("/add/album", isAuthenticated,async function (req, res) {
-    console.log(req);
+  // album search
+  app.get("/search", isAuthenticated, async function (req, res) {
+    let artist = req.query.search;
+    const apiKey = process.env.API_KEY;
+
     try {
-      let album = {
-        albumName: "Break the Cycle",
-        artist: "staind",
-        albumArt: "https://www.theaudiodb.com/images/media/album/thumb/break-the-cycle-4e80638b960ae.jpg",
-        releaseYear: 2001,
-        genre: "alt rock"
-      };
-      console.log(album);
+      if (!artist) {
+        return res.render("collection");
+      }
+
+      const response = await axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`);
+      // console.log(response.data.album);
+
+      const albums = response.data.album.map(x => ({
+        albumName: x.strAlbum,
+        artist: x.strArtist,
+        albumArt: x.strAlbumThumb,
+        releaseYear: x.intYearReleased,
+        genre: x.strGenre
+      }));
       //needs to be changed to render on search page instead of collections page
       //slice to narrow down number of returned objects from search, set to return 2 albums now
-      res.render("search", album);
-
+      res.render("search", { albums: albums });
     } catch (error) {
       // console.log(error);
       res.sendStatus(500);

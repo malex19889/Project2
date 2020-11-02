@@ -20,7 +20,7 @@ create link to route to this page if collection is empty --}}
                 </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0" method="GET" action="/members">
+            <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
                 <input class="form-control mr-sm-2" name="search" placeholder="Search by Artist" aria-label="Search">
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -42,15 +42,30 @@ create link to route to this page if collection is empty --}}
         </div>
     </div>
 
-    <div class="collection-container">
-        
-        <section id="cover">
-            <img src="{{albumArt}}" alt="Album Art" class="albumArt">
-            <h3>{{artist}}: {{albumName}}</h3>
-            <p>{{releaseYear}}</p>
-            <p>{{genre}}</p>
-        </section>
-       
+    <div class="collection-container ">
+        {{#each albums}}
+        <div class="row">
+            {{!-- album art --}}
+            <div class="col-md-4">
+                <img style="width: 100%;" src="{{albumArt}}" alt="Album Art" class="albumArt">
+            </div>
+            {{!-- info --}}
+            <div class="col-md-8">
+                <form class="form- my-2 my-lg-0" method="POST" action="/api/albums">
+                    <textarea class="form-control"  name="artist" rows="1">{{artist}}</textarea>
+                    <textarea class="form-control"  name="album" rows="1">{{albumName}}</textarea>
+                    <textarea class="form-control"  name="albumArt" rows="1">{{albumArt}}</textarea>
+                    <textarea class="form-control"  name="year" rows="1">{{releaseYear}}</textarea>
+                    <textarea class="form-control"  name="genre" rows="1">{{genre}}</textarea>
+                    <textarea class="form-control"  name="notes" placeholder="notes" rows="1"></textarea>
+                    <textarea class="form-control"  name="condition" placeholder="condition" rows="1"></textarea>
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add</button>
+                </form>
+
+            </div>
+        </div>
+
+        {{/each}}
     </div>
-    
+
 </div>

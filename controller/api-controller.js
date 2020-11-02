@@ -48,6 +48,25 @@ module.exports = function (app) {
       });
     }
   });
+  // post new albums to db
+  app.post("/api/albums", function (req, res) {
+    console.log(req);
+    db.Album.create({
+      artist: req.body.artist,
+      albumName: req.body.album,
+      albumArt: req.body.albumArt,
+      releaseYear: req.body.year,
+      genre: req.body.genre,
+      notes: req.body.notes,
+      condition: req.body.condition
+    })
+      .then(function() {
+        res.redirect(307, "/");
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
+  });
 };
 
 
