@@ -58,7 +58,8 @@ module.exports = function (app) {
       releaseYear: req.body.year,
       genre: req.body.genre,
       notes: req.body.notes,
-      condition: req.body.condition
+      condition: req.body.condition,
+      UserId: req.user.id
     })
       .then(function() {
         res.redirect(307, "/");
