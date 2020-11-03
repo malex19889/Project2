@@ -11,15 +11,15 @@ module.exports = function (sequelize, DataTypes) {
         },
         releaseYear: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
         albumArt: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         genre: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         cd: {
             type: DataTypes.BOOLEAN,
