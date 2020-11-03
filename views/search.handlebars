@@ -13,7 +13,7 @@ create link to route to this page if collection is empty --}}
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/members">Results</a>
+                    <a class="nav-link" href="/members">My Collection</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
@@ -30,7 +30,7 @@ create link to route to this page if collection is empty --}}
 
     <div class="row">
         <div class="col-lg-12" id="home-header">
-            <h1 class="home">My Collection</h1>
+            <h1 class="home">Search Results</h1>
             {{!-- this will search for keywords in your collection --}}
             <div class="input-group mb-3" id="collectionsearch">
                 <div class="input-group-prepend">
@@ -58,39 +58,27 @@ create link to route to this page if collection is empty --}}
                     <h6 class="releaseYear" name="year" rows="1">{{releaseYear}}</h6>
                     <h6 class="genre" name="genre" rows="1">{{genre}}</h6>
 
-                    {{!-- dropdown menu for media types --}}
                     <textarea class="form-control" name="notes" placeholder="notes" rows="2"></textarea>
 
                     {{!-- dropdown menu for condition --}}
-                    <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Condition
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" name="condition" href="#">Mint</a>
-                            <a class="dropdown-item" name="condition" href="#">Near Mint</a>
-                            <a class="dropdown-item" name="condition" href="#">Very Good</a>
-                            <a class="dropdown-item" name="condition" href="#">Good</a>
-                            <a class="dropdown-item" name="condition" href="#">Fair</a>
-                            <a class="dropdown-item" name="condition" href="#">Poor</a>
-                        </div>
-                    </div>
+                    <label for="mediaTypeSelect">Media Type</label>
+                    <select class="form-control" id="mediaTypeSelect">
+                        <option class="mediaType" name="cd">CD</option>
+                        <option class="mediaType" name="cassette">Cassette</option>
+                        <option class="mediaType" name="vinylSeven">7" Vinyl</option>
+                        <option class="mediaType" name="vinylTwelve">12" Vinyl</option>
+                        <option class="mediaType" name="eightTrack">8-track</option>
+                        <option class="mediaType" name="digital">Digital</option>
+                    </select>
 
-                    <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Media Type
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" name="cd" href="#">CD</a>
-                            <a class="dropdown-item" name="cassette" href="#">Cassette</a>
-                            <a class="dropdown-item" name="vinylSeven" href="#">7" Record</a>
-                            <a class="dropdown-item" name="vinylTwelve" href="#">12" Record</a>
-                            <a class="dropdown-item" name="eightTrack" href="#">8-track</a>
-                            <a class="dropdown-item" name="digital" href="#">Digital</a>
-                        </div>
-                    </div>
+                    <label for="conditionSelect">Condition</label>
+                    <select class="form-control" id="conditionSelect">
+                        <option class="condition" name="condition">Mint</option>
+                        <option class="condition" name="condition">Near Mint</option>
+                        <option class="condition" name="condition">Very Good</option>
+                        <option class="condition" name="condition">Fair</option>
+                        <option class="condition" name="condition">Poor</option>
+                    </select>
 
                     <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add</button>
                 </form>
