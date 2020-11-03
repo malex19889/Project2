@@ -74,8 +74,7 @@ module.exports = function (app) {
         releaseYear: x.intYearReleased,
         genre: x.strGenre
       }));
-      //needs to be changed to render on search page instead of collections page
-      //slice to narrow down number of returned objects from search, set to return 2 albums now
+
       res.render("search", { albums: albums });
     } catch (error) {
       // console.log(error);
