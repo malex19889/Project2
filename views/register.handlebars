@@ -10,22 +10,22 @@
         <div class="col-lg-4"></div>
         <form class="col-lg-4" id="login-form" method="POST" action="/api/register">
             <div class="form-group">
-                <label for="firstName">First Name:</label>
+                <label for="firstName" id="firstnameLabel">First Name:</label>
                 <input type="firstName" class="form-control" name="firstName" id="firstName" aria-describedby="firstHelp">
             </div>
             <div class="form-group">
-                <label for="lastName">Last Name:</label>
+                <label for="lastName" id="lastnameLabel">Last Name:</label>
                 <input type="lasName" class="form-control" name="lastName" id="lastName" aria-describedby="lastHelp">
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email" id="emailLabel">Email:</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your information with
                     anyone
                     else.</small>
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password" id="passwordLabel">Password:</label>
                 <input type="password" class="form-control" name="password" id="password">
             </div>
             <button type="submit" class="btn btn-dark" id="usersub">Submit</button>
