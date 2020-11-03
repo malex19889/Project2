@@ -79,15 +79,15 @@ create link to route to this page if collection is empty --}}
                         <label class="form-check-label" for="{{albumName}}-tapeCheck">Cassette</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="7 Vinyl" type="checkbox" id="{{albumName}}-7vinylCheck" value="true">
+                        <input class="form-check-input" name="vinylSeven" type="checkbox" id="{{albumName}}-7vinylCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-7vinylCheck">7" Vinyl</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="12 Vinyl" type="checkbox" id="{{albumName}}-12vinylCheck" value="true">
+                        <input class="form-check-input" name="vinylTwelve" type="checkbox" id="{{albumName}}-12vinylCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-12vinylCheck">12" Vinyl</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="8-track" type="checkbox" id="{{albumName}}-8trackCheck" value="true">
+                        <input class="form-check-input" name="eightTrack" type="checkbox" id="{{albumName}}-8trackCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-8trackCheck">8-track</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -113,7 +113,7 @@ create link to route to this page if collection is empty --}}
         console.log($(this).serialize())
 
         let elems = $(this).serialize()
-        {{!-- $.post("api/albums", elems) --}}
+        $.post("api/albums", elems)
         {{!-- change add button to added and disabled --}}
     })
 </script>

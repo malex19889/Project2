@@ -57,6 +57,12 @@ module.exports = function (app) {
       albumArt: req.body.albumArt,
       releaseYear: req.body.year,
       genre: req.body.genre,
+      cd: req.body.cd,
+      cassette: req.body.cassette,
+      vinylSeven: req.body.vinylSeven,
+      vinylTwelve: req.body.vinylTwelve,
+      eightTrack: req.body.eightTrack,
+      digital: req.body.Digital,
       notes: req.body.notes,
       condition: req.body.condition,
       UserId: req.user.id
