@@ -48,11 +48,16 @@ datatables.js - set up collection specific search
         {{#each albums}}
         <section id="cover">
             <img src="{{albumArt}}" alt="Album Art" class="albumArt">
-            <h3>{{artist}}: {{albumName}}</h3>
-            <p>{{releaseYear}}</p>
-            <p>{{genre}}</p>
+            <h2>{{artist}}</h2>
+            <h4>{{albumName}}</h4>
+            <h6>{{releaseYear}}</h6>
+            <h6>{{genre}}</h6>
+            {{!-- don't know how to connect these to db yet --}}
+            <h6>{{condition}}</h6>
+            <h6>{{MediaType}}</h6>
+            <p>{{notes}}</p>
         </section>
         {{/each}}
     </div>
-    
+
 </div>
