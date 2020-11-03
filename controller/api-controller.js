@@ -50,7 +50,7 @@ module.exports = function (app) {
   });
   // post new albums to db
   app.post("/api/albums", function (req, res) {
-    // console.log(req);
+    console.log(req.body);
     db.Album.create({
       artist: req.body.artist,
       albumName: req.body.album,
