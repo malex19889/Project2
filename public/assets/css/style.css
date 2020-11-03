@@ -8,6 +8,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 2rem;
+}
+
+#home-header {
+    padding-bottom: 10%;
+}
+
+h4 {
+    color: rgb(247, 204, 97);
+}
+
+#descriptionId {
+    text-align: center;
+}
+
+#descriptionCol {
+    color: rgb(249, 235, 179);
 }
 
 h1 {
@@ -15,14 +32,21 @@ h1 {
     padding: 10px 0px 10px 0px;
 }
 
-.description {
-    padding-right: 20px;
-}
-
 #login-form {
     text-align: left;
     padding: 30px 30px 15px 30px;
     box-shadow: 5px 5px 5px 5px black;
+}
+
+#emailLabel,
+#passwordLabel,
+#firstnameLabel,
+#lastnameLabel {
+    color: rgb(247, 204, 97);
+}
+
+.navbar {
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 #createAccount,
@@ -34,6 +58,10 @@ h1 {
 .collection-container {
     width: 1024px;
     margin: 40px auto;
+}
+
+.hidden {
+    display: none;
 }
 
 #collectionsearch {
