@@ -30,6 +30,10 @@ h1 {
     margin: 40px auto;
 }
 
+.hidden {
+    display: none;
+}
+
 #collectionsearch {
     width: 50%;
     margin: 0 auto;
