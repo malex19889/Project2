@@ -1,7 +1,13 @@
 * {
     box-sizing: border-box;
     color: black;
-    font-weight: bolder;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.audiofilerImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
