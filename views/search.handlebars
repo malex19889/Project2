@@ -13,7 +13,7 @@ create link to route to this page if collection is empty --}}
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/members">My Collection</a>
+                    <a class="nav-link" href="/members">Results</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
@@ -52,13 +52,46 @@ create link to route to this page if collection is empty --}}
             {{!-- info --}}
             <div class="col-md-8">
                 <form class="form- my-2 my-lg-0" method="POST" action="/api/albums">
-                    <textarea class="form-control"  name="artist" rows="1">{{artist}}</textarea>
-                    <textarea class="form-control"  name="album" rows="1">{{albumName}}</textarea>
-                    <textarea class="form-control"  name="albumArt" rows="1">{{albumArt}}</textarea>
-                    <textarea class="form-control"  name="year" rows="1">{{releaseYear}}</textarea>
-                    <textarea class="form-control"  name="genre" rows="1">{{genre}}</textarea>
-                    <textarea class="form-control"  name="notes" placeholder="notes" rows="1"></textarea>
-                    <textarea class="form-control"  name="condition" placeholder="condition" rows="1"></textarea>
+                    <h2 class="artist" name="artist" rows="1">{{artist}}</h2>
+                    <h4 class="albumName" name="album" rows="1">"{{albumName}}"</h4>
+                    <p class="hidden" name="albumArt" rows="1">{{albumArt}}</p>
+                    <h6 class="releaseYear" name="year" rows="1">{{releaseYear}}</h6>
+                    <h6 class="genre" name="genre" rows="1">{{genre}}</h6>
+
+                    {{!-- dropdown menu for media types --}}
+                    <textarea class="form-control" name="notes" placeholder="notes" rows="2"></textarea>
+
+                    {{!-- dropdown menu for condition --}}
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Condition
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" name="condition" href="#">Mint</a>
+                            <a class="dropdown-item" name="condition" href="#">Near Mint</a>
+                            <a class="dropdown-item" name="condition" href="#">Very Good</a>
+                            <a class="dropdown-item" name="condition" href="#">Good</a>
+                            <a class="dropdown-item" name="condition" href="#">Fair</a>
+                            <a class="dropdown-item" name="condition" href="#">Poor</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Media Type
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" name="cd" href="#">CD</a>
+                            <a class="dropdown-item" name="cassette" href="#">Cassette</a>
+                            <a class="dropdown-item" name="vinylSeven" href="#">7" Record</a>
+                            <a class="dropdown-item" name="vinylTwelve" href="#">12" Record</a>
+                            <a class="dropdown-item" name="eightTrack" href="#">8-track</a>
+                            <a class="dropdown-item" name="digital" href="#">Digital</a>
+                        </div>
+                    </div>
+
                     <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add</button>
                 </form>
 
