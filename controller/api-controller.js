@@ -50,19 +50,25 @@ module.exports = function (app) {
   });
   // post new albums to db
   app.post("/api/albums", function (req, res) {
-    console.log(req);
+    console.log(req.body);
     db.Album.create({
       artist: req.body.artist,
       albumName: req.body.album,
       albumArt: req.body.albumArt,
       releaseYear: req.body.year,
       genre: req.body.genre,
+      cd: req.body.cd,
+      cassette: req.body.cassette,
+      vinylSeven: req.body.vinylSeven,
+      vinylTwelve: req.body.vinylTwelve,
+      eightTrack: req.body.eightTrack,
+      digital: req.body.Digital,
       notes: req.body.notes,
       condition: req.body.condition,
       UserId: req.user.id
     })
       .then(function() {
-        res.redirect(307, "/");
+        res.status(201);
       })
       .catch(function (err) {
         res.status(401).json(err);

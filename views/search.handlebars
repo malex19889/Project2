@@ -51,34 +51,51 @@ create link to route to this page if collection is empty --}}
             </div>
             {{!-- info --}}
             <div class="col-md-8">
-                <form class="form- my-2 my-lg-0" method="POST" action="/api/albums">
-                    <h2 class="artist" name="artist" rows="1">{{artist}}</h2>
-                    <h4 class="albumName" name="album" rows="1">"{{albumName}}"</h4>
-                    <p class="hidden" name="albumArt" rows="1">{{albumArt}}</p>
-                    <h6 class="releaseYear" name="year" rows="1">{{releaseYear}}</h6>
-                    <h6 class="genre" name="genre" rows="1">{{genre}}</h6>
+                <form class="form- my-2 my-lg-0 albumSub">
+                    <textarea class="form-control" readonly name="artist" rows="1">{{artist}}</textarea>
+                    <textarea class="form-control" readonly name="album" rows="1">{{albumName}}</textarea>
+                    <textarea class="form-control" readonly name="albumArt" rows="1">{{albumArt}}</textarea>
+                    <textarea class="form-control" readonly name="year" rows="1">{{releaseYear}}</textarea>
+                    <textarea class="form-control" readonly name="genre" rows="1">{{genre}}</textarea>
 
                     <textarea class="form-control" name="notes" placeholder="notes" rows="2"></textarea>
 
                     {{!-- dropdown menu for condition --}}
-                    <label for="mediaTypeSelect">Media Type</label>
-                    <select class="form-control" id="mediaTypeSelect">
-                        <option class="mediaType" name="cd">CD</option>
-                        <option class="mediaType" name="cassette">Cassette</option>
-                        <option class="mediaType" name="vinylSeven">7" Vinyl</option>
-                        <option class="mediaType" name="vinylTwelve">12" Vinyl</option>
-                        <option class="mediaType" name="eightTrack">8-track</option>
-                        <option class="mediaType" name="digital">Digital</option>
-                    </select>
-
                     <label for="conditionSelect">Condition</label>
-                    <select class="form-control" id="conditionSelect">
+                    <select class="form-control" name="condition" id="{{albumName}}-conditionSelect">
                         <option class="condition" name="condition">Mint</option>
                         <option class="condition" name="condition">Near Mint</option>
                         <option class="condition" name="condition">Very Good</option>
                         <option class="condition" name="condition">Fair</option>
                         <option class="condition" name="condition">Poor</option>
                     </select>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="CD" type="checkbox" id="{{albumName}}-check1" value="true">
+                        <label class="form-check-label" for="{{albumName}}-check1">CD</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="Cassette" type="checkbox" id="{{albumName}}-tapeCheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-tapeCheck">Cassette</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="vinylSeven" type="checkbox" id="{{albumName}}-7vinylCheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-7vinylCheck">7" Vinyl</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="vinylTwelve" type="checkbox" id="{{albumName}}-12vinylCheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-12vinylCheck">12" Vinyl</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="eightTrack" type="checkbox" id="{{albumName}}-8trackCheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-8trackCheck">8-track</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="Digital" type="checkbox" id="{{albumName}}-digitalheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-digitalheck">Digital</label>
+                    </div>
+                    <br>
+                    
 
                     <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add</button>
                 </form>
@@ -90,3 +107,13 @@ create link to route to this page if collection is empty --}}
     </div>
 
 </div>
+<script>
+    $(".albumSub").on("submit", function (event) {
+        event.preventDefault();
+        console.log($(this).serialize())
+
+        let elems = $(this).serialize()
+        $.post("api/albums", elems)
+        {{!-- change add button text to added and disable it --}}
+    })
+</script>
