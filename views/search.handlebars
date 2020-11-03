@@ -54,7 +54,7 @@ create link to route to this page if collection is empty --}}
                 <form class="form- my-2 my-lg-0 albumSub">
                     <textarea class="form-control" readonly name="artist" rows="1">{{artist}}</textarea>
                     <textarea class="form-control" readonly name="album" rows="1">{{albumName}}</textarea>
-                    <textarea class="form-control" readonly name="albumArt" rows="1">{{albumArt}}</textarea>
+                    <textarea class="form-control" readonly name="albumArt" id="hidden"rows="1">{{albumArt}}</textarea>
                     <textarea class="form-control" readonly name="year" rows="1">{{releaseYear}}</textarea>
                     <textarea class="form-control" readonly name="genre" rows="1">{{genre}}</textarea>
 
@@ -97,7 +97,7 @@ create link to route to this page if collection is empty --}}
                     <br>
                     
 
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add</button>
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="addBtn">Add</button>
                 </form>
 
             </div>
