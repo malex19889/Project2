@@ -50,7 +50,7 @@ module.exports = function (app) {
   });
   // post new albums to db
   app.post("/api/albums", function (req, res) {
-    console.log(req);
+    // console.log(req);
     db.Album.create({
       artist: req.body.artist,
       albumName: req.body.album,
@@ -62,7 +62,7 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function() {
-        res.redirect(307, "/");
+        res.status(201);
       })
       .catch(function (err) {
         res.status(401).json(err);
