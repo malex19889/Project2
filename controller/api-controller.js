@@ -33,27 +33,7 @@ module.exports = function (app) {
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
-<<<<<<< HEAD
-    res.redirect("/index");
-  });
-  // Route to api call for audiodb
-  // eslint-disable-next-line no-unused-vars
-  app.get("music_data/:artist", function(req, res) {
-    let artist = req.params.artist;
-    const apiKey = process.env.API_KEY;
-
-    axios.get(`https://theaudiodb.com/api/v1/json/${apiKey}/searchalbum.php?s=${artist}`)
-      .then((response) => {
-        getdata(response);
-        // res.send(response.data.album);
-
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-=======
     res.redirect("/");
->>>>>>> main
   });
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", isAuthenticated, function (req, res) {
