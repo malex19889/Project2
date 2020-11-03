@@ -50,7 +50,7 @@ $("#artist-search-btn").on("click", function() {
   var artistSearched = $("#artist-search").val().trim();
 
   // Make an AJAX get request to our api, including the user's author in the url
-  $.get("/api/artist/" + artistSearched, function(data) {
+  $.get("/music_data/:artist" + artistSearched, function(data) {
 
     // Log the data to the console
     console.log(data);

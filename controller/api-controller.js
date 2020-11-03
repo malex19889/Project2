@@ -49,7 +49,7 @@ module.exports = function(app) {
   });
   // Route to api call for audiodb
   // eslint-disable-next-line no-unused-vars
-  app.get("/api/music_data/:artist", function(req, res) {
+  app.get("music_data/:artist", function(req, res) {
     let artist = req.params.artist;
     const apiKey = process.env.API_KEY;
 

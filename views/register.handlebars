@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="home">Register</h1>
+            <h1 class="register-header">Register</h1>
         </div>
     </div>
     <div class="row">
@@ -18,7 +18,7 @@
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" id="password">
             </div>
-            <button type="submit" class="btn btn-dark" id="usersub">Submit</button>
+            <button type="submit" class="btn btn-dark">Submit</button>
             <p id="loginlink"><a href="/">Login here.</a></p>
         </form>
         <div class="col-lg-4"></div>
@@ -26,21 +26,19 @@
 
 </div>
 <script>
-    $("#usersub").on("click", (event)=> {
-        event.preventDefault();
+    $("#usersub").on("click", () => {
+
         let newuser = {
-            firstName: "alex",
-            lastName: "will",
             email: $("#email").val().trim(),
             password: $("#password").val().trim()
         }
         $.ajax({
-          type: "POST",
-          url: "/api/register",
-          data: newuser  
-        }).then((data)=>{
-            window.location.replace("/login")
+            type: "POST",
+            url: "/api/register",
+            data: newuser
+        }).then((data) => {
+            alert("posted new user")
         })
-        
+
     })
 </script>
