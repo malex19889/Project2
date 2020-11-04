@@ -43,7 +43,7 @@ module.exports = function (app) {
       }
     }).then(function(data) {
       console.log(data);
-      res.redirect("/members");
+      res.json(data);
     });
   });
   // PUT route for updating albums
@@ -56,7 +56,7 @@ module.exports = function (app) {
         }
       }).then(function(data) {
       console.log(data);
-      res.redirect("/members");
+      res.json(data);
     });
   });
   // Route for getting some data about our user to be used client side
