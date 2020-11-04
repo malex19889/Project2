@@ -13,15 +13,31 @@ function checkCurrentData(albums){
   console.log("this is Searched Albums");
   console.log(albums);
 
-  /*for(let i = 0; artist2.length; i++){
-    if(artist2[i].artist === artist3[i].artist){
-      if()
-    } else{
-      newAlbums = artist2.concate(artist3)
-    }
-  }*/
+  let newAlbums = {};
+  for(let i = 0, j = 0; i < albums.length; i ++){
+    if(currentCollection[i].artist === albums[j].artist){
+      console.log("in true statment");
+      for(let x = i; x < albums.length; x++){
+        if(currentCollection[x].albumName === albums[x].albumName &&
+            currentCollection[x].releaseYear === albums[x].releaseYear){
+          console.log("in for Loop True ");
+          console.log(currentCollection[x].artist + " " + currentCollection[x].albumName);
+          console.log(albums[x].artist + " " + albums[x].albumName);
+        }
+      }
 
-  let newAlbums = albums.filter(item => ((item.artist !== currentCollection[0].artist || item.album !== currentCollection[0].album)));
+    } else {
+      console.log("in the else statement");
+      console.log(albums[i]);
+      console.log("this is j value "+ j);
+      newAlbums[j] = albums[i];
+      console.log("this is NewAlbums data");
+      console.log(newAlbums);
+      j++;
+    }
+  }
+
+  //let newAlbums = albums.filter(item => ((item.artist !== currentCollection[0].artist || item.album !== currentCollection[0].album)));
 
   console.log("this is after the filter ");
   console.log(newAlbums);
@@ -72,7 +88,7 @@ module.exports = function (app) {
       }));
       //currentCollection will give the value to the Function checkCurrentData
       currentCollection = albums;
-      console.log(albums);
+      // console.log(albums);
       res.render("collection", { albums: albums });
 
     }).catch(function (err) {
