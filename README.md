@@ -1,8 +1,19 @@
 # Project 2: AudioFiler App
+![badge](https://img.shields.io/badge/license-ICS-orange)
+![badge](https://img.shields.io/badge/build-passing-brightgreen)
+    
+<h2>
+<p><strong>au·​dio·​phile | \ ˈȯ-dē-ō-ˌfī(-ə)l</strong>
+<br>
+<em>noun</em>
+<br>
+a hi-fi enthusiast.
+<br>
+"AudioFiler is the only catalogging app trusted by audiophiles."
+</p>
+</h2>
 
-<strong>au·​dio·​phile | \ ˈȯ-dē-ō-ˌfī(-ə)l</strong>
-
-AudioFiler is a mobile-first application that allows a user to create an account, search an API for albums, and store those albums within a database to then be returned as the user's collection.
+AudioFiler is a mobile-first album catalogging application. It allows a user to create an account, search an API for albums, and store those albums within a database to then be returned as the user's collection.
 
 ## Motivation
 
@@ -14,13 +25,13 @@ As a music lover, I would like to have the ability to access and peruse my album
 
 ### Mobile
 
-<img src="">
+<img src="public/assets/images/AudioFile-Mobile.png">
 <img src="https://media.giphy.com/media/F1ZIDOcrOuVd9VDDQk/giphy.gif">
 
 ### Desktop
 
-<img src="">
 <img src="https://media.giphy.com/media/DGVt51KhbQYfd82yLy/giphy.gif">
+<img src="https://media.giphy.com/media/yF0cVSfe8wFESH1EVd/giphy.gif">
 
 ### Link to Deployed Application
 
