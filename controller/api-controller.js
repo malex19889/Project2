@@ -86,7 +86,7 @@ module.exports = function (app) {
       vinylSeven: req.body.vinylSeven,
       vinylTwelve: req.body.vinylTwelve,
       eightTrack: req.body.eightTrack,
-      digital: req.body.Digital,
+      digital: req.body.digital,
       notes: req.body.notes,
       condition: req.body.condition,
       UserId: req.user.id
