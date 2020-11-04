@@ -57,23 +57,20 @@ h1 {
 
 .collection-container {
     width: 1024px;
-    margin: 40px auto;
+    margin-left: 40px auto;
+    padding-bottom: 1rem;
 }
 
 .albumArt {
     box-shadow: 5px 5px 5px 5px black;
+    margin-top: 1.5rem;
 }
-
-
 
 #artistForm,
 #yearForm,
 #genreForm {
     background-color: transparent;
     border-style: hidden;
-    overflow: auto !important;
-    overflow-y: hidden !important;
-    overflow-x: hidden !important;
     color:  rgb(249, 235, 179);
     font-size: 20px;
 }
@@ -93,7 +90,7 @@ h1 {
     color:rgb(249, 235, 179);
 }
 
-#conditionSelect {
+select[name=condition] {
     width: 50%;
 }
 
@@ -107,10 +104,10 @@ h1 {
     border-color:  rgb(247, 204, 97);
 }
 
+/* Hides album art url from form*/
 #hidden {
     display: none;
 }
-
 
 textarea[name=artist],
 textarea[name=album],
@@ -136,3 +133,15 @@ textarea[name=genre] {
 #more-info {
     float: right;
 }
+
+@media only screen and ( max-device-width: 1024px ) {
+    img.albumArt { width: 50%; }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    img.albumArt { width: 80%;
+    align-items: center;
+    margin-left: 10px;}
+    }
+
+img.albumArt { height: auto; }

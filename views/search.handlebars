@@ -27,21 +27,7 @@ create link to route to this page if collection is empty --}}
 
         </div>
     </nav>
-
-    <div class="row">
-        <div class="col-lg-12" id="home-header">
-            <h1 class="home">Search Results</h1>
-            {{!-- this will search for keywords in your collection --}}
-            <div class="input-group mb-3" id="collectionsearch">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
-                </div>
-                <input type="text" class="form-control" placeholder="" aria-label="Search submit"
-                    aria-describedby="button-addon1">
-            </div>
-        </div>
-    </div>
-
+    
     <div class="collection-container" id="collection">
         {{#each albums}}
         <div class="row">
@@ -57,19 +43,19 @@ create link to route to this page if collection is empty --}}
                     <textarea class="form-control" readonly name="albumArt" id="hidden"rows="1">{{albumArt}}</textarea>
                     <textarea class="form-control" readonly name="year" id="yearForm" rows="1">{{releaseYear}}</textarea>
                     <textarea class="form-control" readonly name="genre" id="genreForm" rows="1">{{genre}}</textarea>
-
-                    <textarea class="form-control" name="notes" placeholder="notes" id="notes" rows="2"></textarea>
-
+                    <br>
+                    <textarea class="form-control" name="notes" placeholder="Notes" id="notes" rows="2"></textarea>
+                    <br>
                     {{!-- dropdown menu for condition --}}
                     <label for="conditionSelect" id="conditionLabel">Condition</label>
-                    <select class="form-control conditionForm" name="condition" id="{{albumName}}-conditionSelect">
+                    <select class="form-control" name="condition" id="{{albumName}}-conditionSelect">
                         <option class="condition" name="condition">Mint</option>
                         <option class="condition" name="condition">Near Mint</option>
                         <option class="condition" name="condition">Very Good</option>
                         <option class="condition" name="condition">Fair</option>
                         <option class="condition" name="condition">Poor</option>
                     </select>
-
+                    <br>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" name="CD" type="checkbox" id="{{albumName}}-check1" value="true">
                         <label class="form-check-label" for="{{albumName}}-check1">CD</label>
@@ -82,6 +68,11 @@ create link to route to this page if collection is empty --}}
                         <input class="form-check-input" name="vinylSeven" type="checkbox" id="{{albumName}}-7vinylCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-7vinylCheck">7" Vinyl</label>
                     </div>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="Digital" type="checkbox" id="{{albumName}}-digitalheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-digitalheck">Digital</label>
+                    </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" name="vinylTwelve" type="checkbox" id="{{albumName}}-12vinylCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-12vinylCheck">12" Vinyl</label>
@@ -90,15 +81,12 @@ create link to route to this page if collection is empty --}}
                         <input class="form-check-input" name="eightTrack" type="checkbox" id="{{albumName}}-8trackCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-8trackCheck">8-track</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="Digital" type="checkbox" id="{{albumName}}-digitalheck" value="true">
-                        <label class="form-check-label" for="{{albumName}}-digitalheck">Digital</label>
-                    </div>
                     <br>
-                    
+                    <br>
 
                     <button class="btn btn-primary my-2 my-sm-0" type="submit" id="addBtn">Add</button>
                 </form>
+                <br>
 
             </div>
         </div>
