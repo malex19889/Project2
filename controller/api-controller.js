@@ -3,6 +3,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
+
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -50,30 +51,25 @@ module.exports = function (app) {
   });
   // post new albums to db
   app.post("/api/albums", function (req, res) {
-    console.log(req.body);
+    console.log(req);
     db.Album.create({
       artist: req.body.artist,
       albumName: req.body.album,
       albumArt: req.body.albumArt,
       releaseYear: req.body.year,
       genre: req.body.genre,
-      cd: req.body.cd,
-      cassette: req.body.cassette,
-      vinylSeven: req.body.vinylSeven,
-      vinylTwelve: req.body.vinylTwelve,
-      eightTrack: req.body.eightTrack,
-      digital: req.body.Digital,
       notes: req.body.notes,
       condition: req.body.condition,
       UserId: req.user.id
     })
       .then(function() {
-        res.status(201);
+        res.redirect(307, "/");
       })
       .catch(function (err) {
         res.status(401).json(err);
       });
   });
+
 };
 
 

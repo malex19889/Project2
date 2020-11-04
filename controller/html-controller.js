@@ -3,6 +3,32 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 const axios = require("axios");
 const db = require("../models");
 
+let currentCollection;
+
+function checkCurrentData(albums){
+  // console.log("recived data ");
+  //console.log(albums);
+  console.log("this is Current Collection");
+  console.log(currentCollection);
+  console.log("this is Searched Albums");
+  console.log(albums);
+
+  /*for(let i = 0; artist2.length; i++){
+    if(artist2[i].artist === artist3[i].artist){
+      if()
+    } else{
+      newAlbums = artist2.concate(artist3)
+    }
+  }*/
+
+  let newAlbums = albums.filter(item => ((item.artist !== currentCollection[0].artist || item.album !== currentCollection[0].album)));
+
+  console.log("this is after the filter ");
+  console.log(newAlbums);
+  return newAlbums;
+}
+
+
 module.exports = function (app) {
   // route to index
   app.get("/", function (req, res) {
@@ -44,6 +70,8 @@ module.exports = function (app) {
         condition: x.condition,
         notes: x.notes
       }));
+      //currentCollection will give the value to the Function checkCurrentData
+      currentCollection = albums;
       console.log(albums);
       res.render("collection", { albums: albums });
 
@@ -74,8 +102,10 @@ module.exports = function (app) {
         releaseYear: x.intYearReleased,
         genre: x.strGenre
       }));
+      //this will return all the albums minus the members albums
+      let minusMembersalbums = checkCurrentData(albums);
 
-      res.render("search", { albums: albums });
+      res.render("search", { albums: minusMembersalbums });
     } catch (error) {
       // console.log(error);
       res.sendStatus(500);
