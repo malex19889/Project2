@@ -47,7 +47,7 @@ coming soon
 * Celine Ross - Lead on handlebars; assisted with styling
 * Michael Willingham - Lead on client-side JavaScript and user authentication; assisted with handlebars
 * H/t: David Garza
-* © 2020 RACR (Cutter, Hernandez, Ross, Willingham)
+* © 2020 CHRW (Cutter, Hernandez, Ross, Willingham)
 
 ## License
 ISC
