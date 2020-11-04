@@ -44,9 +44,11 @@
             <h6>{{releaseYear}}</h6>
             <h6>{{genre}}</h6>
             {{!-- don't know how to connect these to db yet --}}
-            <h6>{{condition}}</h6>
-            <h6>{{MediaType}}</h6>
-            <p>{{notes}}</p>
+            <p>Condition: {{condition}}</p>
+            {{#if cd}}
+            <h6>Media type: {{cd}}</h6>
+            {{/if}}
+            <p>Notes: {{notes}}</p>
         </section>
         {{/each}}
     </div>
