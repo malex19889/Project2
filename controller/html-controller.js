@@ -28,8 +28,9 @@ module.exports = function (app) {
       order:["artist"]
       // include: [db.User]
     }).then(function (data) {
-      // console.log(data);
+      console.log(data);
       const albums = data.map(x => ({
+        id: x.id,
         albumName: x.albumName,
         artist: x.artist,
         albumArt: x.albumArt,
