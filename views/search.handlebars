@@ -61,7 +61,7 @@ create link to route to this page if collection is empty --}}
                     <textarea class="form-control" name="notes" placeholder="notes" id="notes" rows="2"></textarea>
 
                     {{!-- dropdown menu for condition --}}
-                    <label for="conditionSelect" id="conditionForm">Condition</label>
+                    <label for="conditionSelect" id="conditionLabel">Condition</label>
                     <select class="form-control conditionForm" name="condition" id="{{albumName}}-conditionSelect">
                         <option class="condition" name="condition">Mint</option>
                         <option class="condition" name="condition">Near Mint</option>
@@ -97,7 +97,7 @@ create link to route to this page if collection is empty --}}
                     <br>
                     
 
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="addBtn">Add</button>
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="addBtn">Add</button>
                 </form>
 
             </div>
@@ -111,7 +111,7 @@ create link to route to this page if collection is empty --}}
     $(".albumSub").on("submit", function (event) {
         event.preventDefault();
         $(this).children("button[type=submit]").prop("disabled", true)
-        $("#addBtn").html("Added!");
+        $(this).children("button[type=submit]").html("Added!"); //only working for first album
 
         console.log($(this).serialize())
 
