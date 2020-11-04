@@ -1,5 +1,5 @@
 # Project 2: AudioFiler App
-![badge](https://img.shields.io/badge/license-ICS-orange)
+![badge](https://img.shields.io/badge/license-ISC-orange)
 ![badge](https://img.shields.io/badge/build-passing-brightgreen)
     
 <h2>
