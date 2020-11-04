@@ -12,7 +12,7 @@
 }
 
 #home-header {
-    padding-bottom: 10%;
+    margin: 10px;
 }
 
 h4 {
@@ -41,7 +41,8 @@ h1 {
 #emailLabel,
 #passwordLabel,
 #firstnameLabel,
-#lastnameLabel {
+#lastnameLabel,
+.home {
     color: rgb(247, 204, 97);
 }
 
@@ -98,10 +99,13 @@ select[name=condition] {
     color:rgb(249, 235, 179);
 }
 
-#addBtn {
+#addBtn,
+#button-addon1,
+#searchBtn {
     background-color: rgb(5, 67, 67);
     opacity: 75%;
     border-color:  rgb(247, 204, 97);
+    color: whitesmoke;
 }
 
 /* Hides album art url from form*/
@@ -122,6 +126,18 @@ textarea[name=genre] {
     margin: 0 auto;
 }
 
+h2,
+h6, 
+p {
+    color:rgb(249, 235, 179);
+}
+
+.albumArtCol {
+    width: 100%;
+    margin: auto;
+    box-shadow: -5px -5px 5px 5px black;
+}
+
 #cover, #general-info, #more-info {
     width: 500px;
     padding: 30px;
@@ -133,15 +149,3 @@ textarea[name=genre] {
 #more-info {
     float: right;
 }
-
-@media only screen and ( max-device-width: 1024px ) {
-    img.albumArt { width: 50%; }
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    img.albumArt { width: 80%;
-    align-items: center;
-    margin-left: 10px;}
-    }
-
-img.albumArt { height: auto; }
