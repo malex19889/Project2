@@ -23,10 +23,10 @@ module.exports = function (app) {
       password: req.body.password
     })
       .then(function() {
-        res.redirect(307, "/");
+        res.redirect("/");
       })
       .catch(function (err) {
-        res.status(401).json(err);
+        res.sendStatus(401,err);
       });
   });
 
@@ -34,6 +34,30 @@ module.exports = function (app) {
   app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
+  });
+  // route to delete an album
+  app.delete("/api/albums/:id", function(req, res) {
+    db.Album.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(data) {
+      console.log(data);
+      res.redirect("/members");
+    });
+  });
+  // PUT route for updating albums
+  app.put("/api/albums", function(req, res) {
+    db.Album.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(data) {
+      console.log(data);
+      res.redirect("/members");
+    });
   });
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", isAuthenticated, function (req, res) {
