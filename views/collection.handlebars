@@ -1,15 +1,6 @@
-{{!--
-add header x
-add search bar x
-add collection x 
-add dropdown for sorting collection x
-organize grid for album art, album info, and extra info
-add footer
-datatables.js - set up collection specific search
---}}
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand">AudioFiler</a>
+        <a class="navbar-brand"><img src="/assets/images/audiofiler.png" height="50" alt="AudioFiler"></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -24,7 +15,7 @@ datatables.js - set up collection specific search
 
             <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
                 <input class="form-control mr-sm-2" name="search" placeholder="Search by Artist" aria-label="Search">
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
             </form>
 
         </div>
@@ -47,7 +38,7 @@ datatables.js - set up collection specific search
     <div class="collection-container">
         {{#each albums}}
         <section id="cover">
-            <img src="{{albumArt}}" alt="Album Art" class="albumArt">
+            <img src="{{albumArt}}" alt="Album Art" class="albumArtCol">
             <h2>{{artist}}</h2>
             <h4>{{albumName}}</h4>
             <h6>{{releaseYear}}</h6>
