@@ -99,15 +99,11 @@ create link to route to this page if collection is empty --}}
     $(".albumSub").on("submit", function (event) {
         event.preventDefault();
         $(this).children("button[type=submit]").prop("disabled", true)
-        $(this).children("button[type=submit]").html("Added!"); //only working for first album
+        $(this).children("button[type=submit]").html("Added!"); 
 
         console.log($(this).serialize())
 
         let elems = $(this).serialize()
         $.post("api/albums", elems)
-<<<<<<< HEAD
-=======
-        /* change add button text to added and disable it */
->>>>>>> d364bb07aa5f15911692a28874490044a40c691b
     })
 </script>
