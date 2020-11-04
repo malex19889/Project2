@@ -60,6 +60,43 @@ h1 {
     margin: 40px auto;
 }
 
+.albumArt {
+    box-shadow: 5px 5px 5px 5px black;
+}
+
+
+
+#artistForm,
+#yearForm,
+#genreForm {
+    background-color: transparent;
+    border-style: hidden;
+    outline: none;
+    overflow-y: hidden !important;
+    color:  rgb(249, 235, 179);
+    font-size: 20px;
+}
+
+#albumForm {
+    background-color: transparent;
+    border-style: hidden;
+    color:   rgb(247, 204, 97);
+    font-size: 30px;
+}
+
+#notes {
+    width: 50%;
+}
+
+#conditionForm {
+    color:rgb(249, 235, 179);
+    width: 50%;
+}
+
+#conditionSelect {
+    width: 50%;
+}
+
 #hidden {
     display: none;
 }
