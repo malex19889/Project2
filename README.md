@@ -15,10 +15,12 @@ As a music lover, I would like to have the ability to access and peruse my album
 ### Mobile
 
 <img src="">
+<img src="https://media.giphy.com/media/F1ZIDOcrOuVd9VDDQk/giphy.gif">
 
 ### Desktop
 
 <img src="">
+<img src="https://media.giphy.com/media/DGVt51KhbQYfd82yLy/giphy.gif">
 
 ### Link to Deployed Application
 
