@@ -18,7 +18,6 @@
     "url": "https://github.com/malex19889/Project2/issues"
   },
   "homepage": "https://github.com/malex19889/Project2#readme",
-  "start": "server.js",
   "dependencies": {
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
