@@ -49,9 +49,28 @@
             {{!-- don't know how to connect these to db yet --}}
             <p>Condition: {{condition}}</p>
             {{#if cd}}
-            <h6>Media type: {{cd}}</h6>
+            <h6>Media Type: CD</h6>
             {{/if}}
+            {{#if cassette}}
+            <h6>Media Type: Cassette</h6>
+            {{/if}}
+            {{#if digital}}
+            <h6>Media Type: Digital</h6>
+            {{/if}}
+            {{#if vinylSeven}}
+            <h6>Media Type: 7" Vinyl</h6>
+            {{/if}}
+            {{#if vinylTwelve}}
+            <h6>Media Type: 12" Vinyl</h6>
+            {{/if}}
+            {{#if eightTrack}}
+            <h6>Media Type: 8-track</h6>
+            {{/if}}
+            
             <p>Notes: {{notes}}</p>
+
+            <button class="btn btn-primary my-2 my-sm-0" type="submit" id="updateBtn">Update</button>
+            <button class="btn btn-primary my-2 my-sm-0" type="submit" id="deleteBtn">Delete</button>
         </section>
         {{/each}}
     </div>
