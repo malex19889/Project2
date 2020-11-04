@@ -78,7 +78,7 @@ module.exports = function (app) {
       res.render("search", { albums: albums });
     } catch (error) {
       // console.log(error);
-      res.sendStatus(500);
+      res.render("error");
     }
   });
 
