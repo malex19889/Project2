@@ -6,7 +6,10 @@ search button
 create link to route to this page if collection is empty --}}
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
         <a class="navbar-brand"><img src="/assets/images/audiofiler.png" height="50" alt="AudioFiler"></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,7 +36,7 @@ create link to route to this page if collection is empty --}}
         <div class="row">
             {{!-- album art --}}
             <div class="col-md-4">
-                <img style="width: 100%;" src="{{albumArt}}" alt="Album Art" class="albumArt">
+                <img src="{{albumArt}}" alt="Album Art" class="albumArt">
             </div>
             {{!-- info --}}
             <div class="col-md-8">
@@ -57,21 +60,21 @@ create link to route to this page if collection is empty --}}
                     </select>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="CD" type="checkbox" id="{{albumName}}-check1" value="true">
+                        <input class="form-check-input" name="cd" type="checkbox" id="{{albumName}}-check1" value="true">
                         <label class="form-check-label" for="{{albumName}}-check1">CD</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="Cassette" type="checkbox" id="{{albumName}}-tapeCheck" value="true">
+                        <input class="form-check-input" name="cassette" type="checkbox" id="{{albumName}}-tapeCheck" value="true">
                         <label class="form-check-label" for="{{albumName}}-tapeCheck">Cassette</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="vinylSeven" type="checkbox" id="{{albumName}}-7vinylCheck" value="true">
-                        <label class="form-check-label" for="{{albumName}}-7vinylCheck">7" Vinyl</label>
+                        <input class="form-check-input" name="digital" type="checkbox" id="{{albumName}}-digitalCheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-digitalCheck">Digital</label>
                     </div>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" name="Digital" type="checkbox" id="{{albumName}}-digitalheck" value="true">
-                        <label class="form-check-label" for="{{albumName}}-digitalheck">Digital</label>
+                        <input class="form-check-input" name="vinylSeven" type="checkbox" id="{{albumName}}-7vinylCheck" value="true">
+                        <label class="form-check-label" for="{{albumName}}-7vinylCheck">7" Vinyl</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" name="vinylTwelve" type="checkbox" id="{{albumName}}-12vinylCheck" value="true">
