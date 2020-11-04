@@ -3,46 +3,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 const axios = require("axios");
 const db = require("../models");
 
-let currentCollection;
 
-function checkCurrentData(albums){
-  // console.log("recived data ");
-  //console.log(albums);
-  console.log("this is Current Collection");
-  console.log(currentCollection);
-  console.log("this is Searched Albums");
-  console.log(albums);
-
-  let newAlbums = {};
-  for(let i = 0, j = 0; i < albums.length; i ++){
-    if(currentCollection[i].artist === albums[j].artist){
-      console.log("in true statment");
-      for(let x = i; x < albums.length; x++){
-        if(currentCollection[x].albumName === albums[x].albumName &&
-            currentCollection[x].releaseYear === albums[x].releaseYear){
-          console.log("in for Loop True ");
-          console.log(currentCollection[x].artist + " " + currentCollection[x].albumName);
-          console.log(albums[x].artist + " " + albums[x].albumName);
-        }
-      }
-
-    } else {
-      console.log("in the else statement");
-      console.log(albums[i]);
-      console.log("this is j value "+ j);
-      newAlbums[j] = albums[i];
-      console.log("this is NewAlbums data");
-      console.log(newAlbums);
-   
-    }
-  }
-
-  //let newAlbums = albums.filter(item => ((item.artist !== currentCollection[0].artist || item.album !== currentCollection[0].album)));
-
-  console.log("this is after the filter ");
-  console.log(newAlbums);
-  return newAlbums;
-}
 
 
 module.exports = function (app) {
@@ -86,8 +47,7 @@ module.exports = function (app) {
         condition: x.condition,
         notes: x.notes
       }));
-      //currentCollection will give the value to the Function checkCurrentData
-      currentCollection = albums;
+
       // console.log(albums);
       res.render("collection", { albums: albums });
 
@@ -119,9 +79,9 @@ module.exports = function (app) {
         genre: x.strGenre
       }));
       //this will return all the albums minus the members albums
-      let minusMembersalbums = checkCurrentData(albums);
 
-      res.render("search", { albums: minusMembersalbums });
+
+      res.render("search", { albums: albums });
     } catch (error) {
       // console.log(error);
       res.sendStatus(500);
