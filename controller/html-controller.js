@@ -33,7 +33,7 @@ function checkCurrentData(albums){
       newAlbums[j] = albums[i];
       console.log("this is NewAlbums data");
       console.log(newAlbums);
-      j++;
+   
     }
   }
 
