@@ -1,7 +1,34 @@
 * {
     box-sizing: border-box;
     color: black;
-    font-weight: bolder;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.audiofilerImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.nav-link {
+    color: whitesmoke;
+}
+
+#home-header {
+    margin: 10px;
+}
+
+h4 {
+    color: rgb(247, 204, 97);
+}
+
+#descriptionId {
+    text-align: center;
+}
+
+#descriptionCol {
+    color: rgb(249, 235, 179);
 }
 
 h1 {
@@ -9,14 +36,22 @@ h1 {
     padding: 10px 0px 10px 0px;
 }
 
-.description {
-    padding-right: 20px;
-}
-
 #login-form {
     text-align: left;
     padding: 30px 30px 15px 30px;
     box-shadow: 5px 5px 5px 5px black;
+}
+
+#emailLabel,
+#passwordLabel,
+#firstnameLabel,
+#lastnameLabel,
+.home {
+    color: rgb(247, 204, 97);
+}
+
+.navbar {
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 #createAccount,
@@ -27,16 +62,86 @@ h1 {
 
 .collection-container {
     width: 1024px;
-    margin: 40px auto;
+    margin-left: 40px auto;
+    padding-bottom: 1rem;
 }
 
-.hidden {
+.albumArt {
+    box-shadow: 5px 5px 5px 5px black;
+    margin-top: 1.5rem;
+}
+
+#artistForm,
+#yearForm,
+#genreForm {
+    background-color: transparent;
+    border-style: hidden;
+    color:  rgb(249, 235, 179);
+    font-size: 20px;
+}
+
+#albumForm {
+    background-color: transparent;
+    border-style: hidden;
+    color:   rgb(247, 204, 97);
+    font-size: 30px;
+}
+
+#notes {
+    width: 50%;
+}
+
+#conditionLabel {
+    color:rgb(249, 235, 179);
+}
+
+select[name=condition] {
+    width: 50%;
+}
+
+.form-check-label {
+    color:rgb(249, 235, 179);
+}
+
+#addBtn,
+#updateBtn,
+#deleteBtn,
+#button-addon1,
+#searchBtn {
+    background-color: rgb(5, 67, 67);
+    opacity: 75%;
+    border-color:  rgb(247, 204, 97);
+    color: whitesmoke;
+}
+
+/* Hides album art url from form*/
+#hidden {
     display: none;
+}
+
+textarea[name=artist],
+textarea[name=album],
+textarea[name=year],
+textarea[name=genre] {
+    resize: none;
+    overflow: hidden;
 }
 
 #collectionsearch {
     width: 50%;
     margin: 0 auto;
+}
+
+h2,
+h6, 
+p {
+    color:rgb(249, 235, 179);
+}
+
+.albumArtCol {
+    width: 100%;
+    margin: auto;
+    box-shadow: -5px -5px 5px 5px black;
 }
 
 #cover, #general-info, #more-info {
@@ -49,4 +154,23 @@ h1 {
 }
 #more-info {
     float: right;
+}
+
+ /* Responsive for small and medium screens
+ ie phone and tablet */
+@media only screen and (min-device-width : 320px) {
+    .albumArt,
+    .collection-container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .albumArt,
+    .collection-container {
+        max-width: 100%;
+        align-content: center;
+    }
 }

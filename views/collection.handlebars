@@ -1,15 +1,9 @@
-{{!--
-add header x
-add search bar x
-add collection x 
-add dropdown for sorting collection x
-organize grid for album art, album info, and extra info
-add footer
-datatables.js - set up collection specific search
---}}
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand">AudioFiler</a>
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <a class="navbar-brand"><img src="/assets/images/audiofiler.png" height="50" alt="AudioFiler"></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -23,8 +17,8 @@ datatables.js - set up collection specific search
             </ul>
 
             <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
-                <input class="form-control mr-sm-2" name="search" placeholder="Search by Artist" aria-label="Search">
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" name="search" placeholder="Search by Artist" aria-label="Search" type="text" required>
+                <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
             </form>
 
         </div>
@@ -33,31 +27,69 @@ datatables.js - set up collection specific search
     <div class="row">
         <div class="col-lg-12" id="home-header">
             <h1 class="home">My Collection</h1>
-            {{!-- this will search for keywords in your collection --}}
-            <div class="input-group mb-3" id="collectionsearch">
+            {{!-- LEAVING FOR FUTURE DEV
+            this will search for keywords in your collection --}}
+            {{!-- <div class="input-group mb-3" id="collectionsearch">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
                 </div>
-                <input type="text" class="form-control" placeholder="" aria-label="Search submit"
+                <input type="text" class="form-control" placeholder="Search Collection" aria-label="Search submit"
                     aria-describedby="button-addon1">
-            </div>
+            </div> --}}
         </div>
     </div>
 
     <div class="collection-container">
         {{#each albums}}
         <section id="cover">
-            <img src="{{albumArt}}" alt="Album Art" class="albumArt">
+            <img src="{{albumArt}}" alt="Album Art" class="albumArtCol">
             <h2>{{artist}}</h2>
             <h4>{{albumName}}</h4>
             <h6>{{releaseYear}}</h6>
             <h6>{{genre}}</h6>
             {{!-- don't know how to connect these to db yet --}}
-            <h6>{{condition}}</h6>
-            <h6>{{MediaType}}</h6>
-            <p>{{notes}}</p>
+            <p>Condition: {{condition}}</p>
+            {{#if cd}}
+            <h6>Media Type: CD</h6>
+            {{/if}}
+            {{#if cassette}}
+            <h6>Media Type: Cassette</h6>
+            {{/if}}
+            {{#if digital}}
+            <h6>Media Type: Digital</h6>
+            {{/if}}
+            {{#if vinylSeven}}
+            <h6>Media Type: 7" Vinyl</h6>
+            {{/if}}
+            {{#if vinylTwelve}}
+            <h6>Media Type: 12" Vinyl</h6>
+            {{/if}}
+            {{#if eightTrack}}
+            <h6>Media Type: 8-track</h6>
+            {{/if}}
+            
+            <p>Notes: {{notes}}</p>
+
+            {{!-- Updates collection data LEAVING FOR FUTURE DEV
+            <button class="btn btn-primary my-2 my-sm-0 updateBtn" type="submit" data-id="{{id}}" id="updateBtn">Update</button> --}}
+            {{!-- Delete button --}}
+            <button class="btn btn-primary my-2 my-sm-0 deleteBtn" type="submit" data-id="{{id}}" id="deleteBtn">Delete</button>
         </section>
         {{/each}}
     </div>
 
 </div>
+
+<script>
+    $(".deleteBtn").on("click", function(event){
+        {{!-- event.preventDefault(); --}}
+        let id = $(this).data("id");
+        $.ajax({
+            url: "/api/albums/"+id,
+            method: "DELETE"
+        }).then(function(data){
+            console.log(data);
+            location.reload();
+        })
+    })
+</script>

@@ -9,7 +9,6 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // res.json(req.user);
     res.redirect("/members");
   });
 
@@ -24,10 +23,10 @@ module.exports = function (app) {
       password: req.body.password
     })
       .then(function() {
-        res.redirect(307, "/");
+        res.redirect("/");
       })
       .catch(function (err) {
-        res.status(401).json(err);
+        res.sendStatus(401,err);
       });
   });
 
@@ -35,6 +34,30 @@ module.exports = function (app) {
   app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
+  });
+  // route to delete an album
+  app.delete("/api/albums/:id", function(req, res) {
+    db.Album.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(data) {
+      console.log(data);
+      res.json(data);
+    });
+  });
+  // PUT route for updating albums
+  app.put("/api/albums", function(req, res) {
+    db.Album.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(data) {
+      console.log(data);
+      res.json(data);
+    });
   });
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", isAuthenticated, function (req, res) {
@@ -58,6 +81,15 @@ module.exports = function (app) {
       albumArt: req.body.albumArt,
       releaseYear: req.body.year,
       genre: req.body.genre,
+<<<<<<< HEAD
+=======
+      cd: req.body.cd,
+      cassette: req.body.cassette,
+      vinylSeven: req.body.vinylSeven,
+      vinylTwelve: req.body.vinylTwelve,
+      eightTrack: req.body.eightTrack,
+      digital: req.body.digital,
+>>>>>>> main
       notes: req.body.notes,
       condition: req.body.condition,
       UserId: req.user.id
