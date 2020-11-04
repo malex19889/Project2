@@ -69,10 +69,24 @@
             
             <p>Notes: {{notes}}</p>
 
-            <button class="btn btn-primary my-2 my-sm-0" type="submit" id="updateBtn">Update</button>
-            <button class="btn btn-primary my-2 my-sm-0" type="submit" id="deleteBtn">Delete</button>
+            <button class="btn btn-primary my-2 my-sm-0 updateBtn" type="submit" data-id="{{id}}" id="updateBtn">Update</button>
+            <button class="btn btn-primary my-2 my-sm-0 deleteBtn" type="submit" data-id="{{id}}" id="deleteBtn">Delete</button>
         </section>
         {{/each}}
     </div>
 
 </div>
+
+<script>
+    $(".deleteBtn").on("click", function(event){
+        {{!-- event.preventDefault(); --}}
+        let id = $(this).data("id");
+        $.ajax({
+            url: "/api/albums/"+id,
+            method: "DELETE"
+        }).then(function(data){
+            console.log(data);
+            location.reload();
+        })
+    })
+</script>
