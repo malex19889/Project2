@@ -11,6 +11,10 @@
     padding-top: 2rem;
 }
 
+.nav-link {
+    color: whitesmoke;
+}
+
 #home-header {
     margin: 10px;
 }
@@ -148,4 +152,23 @@ p {
 }
 #more-info {
     float: right;
+}
+
+ /* Responsive for small and medium screens
+ ie phone and tablet */
+@media only screen and (min-device-width : 320px) {
+    .albumArt,
+    .collection-container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .albumArt,
+    .collection-container {
+        max-width: 100%;
+        align-content: center;
+    }
 }
