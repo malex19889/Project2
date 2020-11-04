@@ -71,8 +71,9 @@ h1 {
 #genreForm {
     background-color: transparent;
     border-style: hidden;
-    outline: none;
+    overflow: auto !important;
     overflow-y: hidden !important;
+    overflow-x: hidden !important;
     color:  rgb(249, 235, 179);
     font-size: 20px;
 }
@@ -88,17 +89,35 @@ h1 {
     width: 50%;
 }
 
-#conditionForm {
+#conditionLabel {
     color:rgb(249, 235, 179);
-    width: 50%;
 }
 
 #conditionSelect {
     width: 50%;
 }
 
+.form-check-label {
+    color:rgb(249, 235, 179);
+}
+
+#addBtn {
+    background-color: rgb(5, 67, 67);
+    opacity: 75%;
+    border-color:  rgb(247, 204, 97);
+}
+
 #hidden {
     display: none;
+}
+
+
+textarea[name=artist],
+textarea[name=album],
+textarea[name=year],
+textarea[name=genre] {
+    resize: none;
+    overflow: hidden;
 }
 
 #collectionsearch {
