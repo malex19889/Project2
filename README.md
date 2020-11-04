@@ -13,7 +13,7 @@ a hi-fi enthusiast.
 </p>
 </h2>
 
-AudioFiler is a mobile-first application that allows a user to create an account, search an API for albums, and store those albums within a database to then be returned as the user's collection.
+AudioFiler is a mobile-first album catalogging application. It allows a user to create an account, search an API for albums, and store those albums within a database to then be returned as the user's collection.
 
 ## Motivation
 
