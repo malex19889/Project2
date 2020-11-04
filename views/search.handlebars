@@ -52,17 +52,17 @@ create link to route to this page if collection is empty --}}
             {{!-- info --}}
             <div class="col-md-8">
                 <form class="form- my-2 my-lg-0 albumSub">
-                    <textarea class="form-control" readonly name="artist" rows="1">{{artist}}</textarea>
-                    <textarea class="form-control" readonly name="album" rows="1">{{albumName}}</textarea>
+                    <textarea class="form-control" readonly name="artist" id="artistForm" rows="1">{{artist}}</textarea>
+                    <textarea class="form-control" readonly name="album" id="albumForm" rows="1">{{albumName}}</textarea>
                     <textarea class="form-control" readonly name="albumArt" id="hidden"rows="1">{{albumArt}}</textarea>
-                    <textarea class="form-control" readonly name="year" rows="1">{{releaseYear}}</textarea>
-                    <textarea class="form-control" readonly name="genre" rows="1">{{genre}}</textarea>
+                    <textarea class="form-control" readonly name="year" id="yearForm" rows="1">{{releaseYear}}</textarea>
+                    <textarea class="form-control" readonly name="genre" id="genreForm" rows="1">{{genre}}</textarea>
 
-                    <textarea class="form-control" name="notes" placeholder="notes" rows="2"></textarea>
+                    <textarea class="form-control" name="notes" placeholder="notes" id="notes" rows="2"></textarea>
 
                     {{!-- dropdown menu for condition --}}
-                    <label for="conditionSelect">Condition</label>
-                    <select class="form-control" name="condition" id="{{albumName}}-conditionSelect">
+                    <label for="conditionSelect" id="conditionForm">Condition</label>
+                    <select class="form-control conditionForm" name="condition" id="{{albumName}}-conditionSelect">
                         <option class="condition" name="condition">Mint</option>
                         <option class="condition" name="condition">Near Mint</option>
                         <option class="condition" name="condition">Very Good</option>
@@ -110,10 +110,12 @@ create link to route to this page if collection is empty --}}
 <script>
     $(".albumSub").on("submit", function (event) {
         event.preventDefault();
+        $(this).children("button[type=submit]").prop("disabled", true)
+        $("#addBtn").html("Added!");
+
         console.log($(this).serialize())
 
         let elems = $(this).serialize()
         $.post("api/albums", elems)
-        {{!-- change add button text to added and disable it --}}
     })
 </script>
