@@ -104,6 +104,8 @@ select[name=condition] {
 }
 
 #addBtn,
+#updateBtn,
+#deleteBtn,
 #button-addon1,
 #searchBtn {
     background-color: rgb(5, 67, 67);
