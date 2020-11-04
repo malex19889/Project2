@@ -1,4 +1,7 @@
 # Project 2: AudioFiler App
+![badge](https://img.shields.io/badge/license-ICS-orange)
+![badge](https://img.shields.io/badge/build-passing-brightgreen)
+    
 <h2>
 <p><strong>au·​dio·​phile | \ ˈȯ-dē-ō-ˌfī(-ə)l</strong>
 <br>
