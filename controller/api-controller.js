@@ -25,7 +25,7 @@ module.exports = function (app) {
         res.redirect("/");
       })
       .catch(function (err) {
-        res.sendStatus(401,err);
+        res.render("registererror",err);
       });
   });
 

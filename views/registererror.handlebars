@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a class="audiofilerImage"><img src="/assets/images/audiofiler.png"></a>
+        </div>
+    </div>
+    <div class="collection-container">
+        <h1>Sorry there is already an account with this email. If you have not registered this account or forgot your password please contact support.</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <form class="col-lg-4" id="login-form" method="POST" action="/api/register">
+            <div class="form-group">
+                <label for="firstName" id="firstnameLabel">First Name:</label>
+                <input type="firstName" class="form-control" name="firstName" id="firstName" aria-describedby="firstHelp">
+            </div>
+            <div class="form-group">
+                <label for="lastName" id="lastnameLabel">Last Name:</label>
+                <input type="lastName" class="form-control" name="lastName" id="lastName" aria-describedby="lastHelp">
+            </div>
+            <div class="form-group">
+                <label for="email" id="emailLabel">Email:</label>
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your information with
+                    anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password" id="passwordLabel">Password:</label>
+                <input type="password" class="form-control" name="password" id="password">
+            </div>
+            <button type="submit" class="btn btn-dark" id="usersub">Submit</button>
+            <p id="loginlink"><a href="/">Login here.</a></p>
+        </form>
+        <div class="col-lg-4"></div>
+    </div>
+
+</div>
