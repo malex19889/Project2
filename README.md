@@ -35,7 +35,7 @@ As a music lover, I would like to have the ability to access and peruse my album
 
 ### Link to Deployed Application
 
-coming soon
+<a href="https://blooming-wildwood-71202.herokuapp.com/">Click here!</a>
 
 ## Features
 
